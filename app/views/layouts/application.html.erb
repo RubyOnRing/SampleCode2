@@ -8,9 +8,25 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="c-app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <%= render "layouts/sidebar" if current_user.present?  %>
+    <div class="c-wrapper">
+      <%= render "layouts/header" if current_user.present? %>
+      <div class="c-body">
+        <main class="c-main">
+          <div class="container-fluid">
+            <%= yield %>
+          </div>
+        </main>
+      </div>
+      <footer class="c-footer">
+        <div><a href="https://coreui.io">Sales Force Sample</a> &copy; 2021 creativeLabs.</div>
+        <div class="ml-auto">Powered by&nbsp;<a href="#">Ruby on Ring</a></div>
+      </footer>
+    </div>
   </body>
 </html>
