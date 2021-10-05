@@ -1,0 +1,18 @@
+<table class="table table-dark">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Salesforce ID</th>
+    <th scope="col">Name</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @accounts.each_with_index do |account, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= account['Id'] %></td>
+        <td><%= account['Name'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
