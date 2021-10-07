@@ -1,24 +1,17 @@
-# README
+# Salesforce sample
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Salesforce is an American cloud-based software company headquartered in San Francisco, California. It provides customer relationship management service and also provides a complementary suite of enterprise applications focused on customer service, marketing automation, analytics, and application development
 
-Things you may want to cover:
+# Introduce
 
-* Ruby version
+On this project we show you how can we use api to fetch and create data from salesforce.
 
-* System dependencies
+You can see the account list, account detail, create new account.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# This sample use:
+* Ruby 2.7.3
+* Rails 6.1.4
+* Database: Mysql
+* CoreUI as layout
+* Salesforce API
+* Jquery, Ajax
