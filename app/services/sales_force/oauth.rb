@@ -4,7 +4,7 @@ require "net/http"
 module SalesForce
   class Oauth
     def perform
-      uri = URI.parse("https://rubyonring.my.salesforce.com/services/oauth2/token")
+      uri = URI.parse("https://#{Rails.application.credentials.oauth_salesforce_instance}.salesforce.com/services/oauth2/token")
       request = Net::HTTP::Post.new(uri)
       request.set_form_data(sales_force_params)
       req_options = {

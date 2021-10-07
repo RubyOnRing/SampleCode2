@@ -7,7 +7,7 @@ module SalesForce
     end
 
     def perform
-      uri = URI.parse("https://rubyonring3-dev-ed.my.salesforce.com/services/data/v23.0/#{@api_path}")
+      uri = URI.parse("#{Rails.application.config.salesforce_pre_url_api}#{@api_path}")
       request = Net::HTTP::Get.new(uri)
       request["Authorization"] = "Bearer #{@user_session[:salesforce_access_token]}"
 

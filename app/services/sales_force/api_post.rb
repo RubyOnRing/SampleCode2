@@ -7,7 +7,7 @@ module SalesForce
     end
 
     def perform
-      url = URI("https://rubyonring3-dev-ed.my.salesforce.com/services/data/v52.0/#{@api_path}")
+      url = URI("#{Rails.application.config.salesforce_pre_url_api}#{@api_path}")
 
       https = Net::HTTP.new(url.host, url.port)
       https.use_ssl = true
