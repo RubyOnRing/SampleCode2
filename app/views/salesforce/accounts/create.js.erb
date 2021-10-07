@@ -1,0 +1,8 @@
+<%- if @salesforce_response.code.to_i == 201 %>
+  window.location.href = '/';
+<% else %>
+messages = '<%= JSON.parse(@salesforce_response.body)[0]['message'] %>';
+$("#messages").html(messages);
+$("#messages").removeClass('d-none');
+window.scrollTo(0, 0);
+<% end %>

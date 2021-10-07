@@ -29,7 +29,6 @@ module SalesForce
       end
 
       JSON.parse(response.body)
-
     end
   end
 end

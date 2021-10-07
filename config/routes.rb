@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root 'salesforce/accounts#index'
 
   namespace :salesforce do
-    resources :accounts, only: [:index, :show]
+    resources :accounts, only: [:index, :show, :new, :create]
   end
 end

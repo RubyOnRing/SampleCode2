@@ -1,4 +1,6 @@
 class Salesforce::AccountsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]
+
   def index
     if session[:salesforce_access_token].nil?
       salesforce_response = SalesForce::Oauth.new.perform
@@ -12,4 +14,22 @@ class Salesforce::AccountsController < ApplicationController
   def show
     @salesforce_account = SalesForce::Accounts::Detail.new(session, params[:id]).perform
   end
+
+  def new
+  end
+
+  def create
+    @salesforce_response = SalesForce::Accounts::Creation.new(session, account_params).perform
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  private
+
+  def account_params
+    params.permit(:Name, :Phone, :BillingStreet, :BillingCity, :BillingState, :BillingCountry, :BillingPostalCode)
+  end
+
 end

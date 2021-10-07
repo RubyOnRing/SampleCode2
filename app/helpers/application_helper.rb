@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def sidebar_active(sidebar_path)
-    'c-active' if current_page?(sidebar_path)
+  def sidebar_active(controller)
+    'c-active' if controller_name == controller
   end
 
   def sidebar_c_show(path)
