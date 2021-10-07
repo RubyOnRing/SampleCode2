@@ -15,3 +15,11 @@ You can see the account list, account detail, create new account.
 * CoreUI as layout
 * Salesforce API
 * Jquery, Ajax
+
+# Staging account
+```
+https://salesforce-sample-rubyonring.herokuapp.com/
+
+email: sample.salesforce@rubyonring.com
+password: 4cEkyB6x7n
+```
