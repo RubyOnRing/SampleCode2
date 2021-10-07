@@ -28,8 +28,8 @@ module SalesForce
         end
       end
 
-      data = JSON.parse(response.body)
-      data['recentItems']
+      JSON.parse(response.body)
+
     end
   end
 end

@@ -7,7 +7,8 @@ module SalesForce
       end
 
       def perform
-        ::SalesForce::ApiGet.new(@user_session, 'sobjects/Account').perform
+        data = ::SalesForce::ApiGet.new(@user_session, 'sobjects/Account').perform
+        data['recentItems']
       end
     end
   end

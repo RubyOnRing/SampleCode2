@@ -8,14 +8,14 @@
     </svg>
   </div>
   <ul class="c-sidebar-nav">
-    <li class="c-sidebar-nav-title">Management</li>
+    <li class="c-sidebar-nav-title">Salesforce Management</li>
     <li class="c-sidebar-nav-item">
-      <%= link_to "#", 'data-turbolinks': false,
-                  class: "c-sidebar-nav-link #{sidebar_active('')}"  do%>
+      <%= link_to salesforce_accounts_path, 'data-turbolinks': false,
+                  class: "c-sidebar-nav-link #{sidebar_active(salesforce_accounts_path)}"  do%>
         <div class="c-sidebar-nav-icon">
           <i class="fas fa-tachometer-alt"></i>
         </div>
-        Dashboard
+        Accounts
       <% end %>
     </li>
   </ul>

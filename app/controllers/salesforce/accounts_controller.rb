@@ -8,4 +8,8 @@ class Salesforce::AccountsController < ApplicationController
     @accounts = SalesForce::Accounts::List.new(session).perform
     @salesforce_access_token = session[:salesforce_access_token]
   end
+
+  def show
+    @salesforce_account = SalesForce::Accounts::Detail.new(session, params[:id]).perform
+  end
 end
